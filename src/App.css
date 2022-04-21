@@ -1,0 +1,82 @@
+body {
+  background-color: yellow;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: chocolate;
+  width: 50%;
+}
+
+.title {
+  padding: 30px 0;
+  text-align: center;
+}
+
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+
+li {
+  padding: 20px 0;
+  text-align: center;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+input {
+  border: none;
+  border-radius: 3px;
+  background-color: aquamarine;
+  padding: 15px 10px;
+  width: 75%;
+  margin-right: 10px;
+}
+
+button {
+  background-color: white;
+  border: solid 2px;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px; 
+}
+
+.title-tarea {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 25px;
+}
+
+.completed {
+  position: relative;
+}
+.completed::after {
+  border-bottom: 0.125em solid red;
+  content: "";
+  left: 0;
+  margin-top: calc(0.125em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.icon-tarea {
+  cursor: pointer;
+  margin-right: 10px;
+}
