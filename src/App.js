@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-
+import TodoList from './components/TodoList';
 
 
 class App extends Component {
@@ -31,28 +31,6 @@ class App extends Component {
     })
   }
 
-  renderTodos = () => {
-    return this.state.todos.map(
-      (todo, index) => {
-        return (
-            <li  key={todo.title}>
-
-              <span className={`title-tarea ${todo.completed ? "completed" : " "}`}>{todo.title}</span>
-
-              <span role="img" area-label="emoji" className='icon-tarea'onClick={this.toggleTodo}
-              data-index={index}
-              > 
-              🆗
-              </span>
-              <span role="img" area-label="emoji" className='icon-tarea' onClick={this.deleteTodo}
-              data-index={index}>❌</span>
-
-          </li>
-        )
-      }
-    )
-  }
-
   submitHandler = (e) => {
     e.preventDefault();
     const newTodo = {
@@ -67,7 +45,6 @@ class App extends Component {
 
   render() {
   
-    const renderedTodos = this.renderTodos()
     return (
       <div className="App">
         <div className='container'>
@@ -75,7 +52,11 @@ class App extends Component {
           Lista de tareas
           </h1>
           <ul>
-           {renderedTodos}
+          {<TodoList 
+          todos={this.state.todos}
+          toggleTodo={this.toggleTodo} 
+          deleteTodo={this.deleteTodo}
+          />}
           </ul>
           <form onSubmit={this.submitHandler} >
             <input 
